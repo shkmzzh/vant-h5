@@ -1,9 +1,13 @@
 <template>
-  <div></div>
+  <div id="app">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {}
+}
 </script>
 
 <style></style>
