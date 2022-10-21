@@ -1,5 +1,10 @@
 <template>
-  <van-cell class="article-item">
+  <!-- 全局注册：
+    到main.js进行全局注册
+       import 组件名 from '组件路径'
+       Vue.component('组件的名字',导入的组件)
+ -->
+  <van-cell class="article-item" @click="cellClick">
     <template #title>
       <div class="head">
         <img :src="item.avatar" alt="" />
@@ -15,19 +20,21 @@
     </template>
   </van-cell>
 </template>
-
 <script>
 export default {
   name: 'ArticleItem',
   props: {
     item: {
-      type: Object,
-      required: true
+      type: Object
+    }
+  },
+  methods: {
+    cellClick() {
+      this.$router.push('/detail?id=' + this.item.id + '&back=' + this.$route.path)
     }
   }
 }
 </script>
-
 <style lang="less" scoped>
 .article-item {
   .head {

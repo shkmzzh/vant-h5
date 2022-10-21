@@ -15,7 +15,7 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/login', component: Login },
   { path: '/register', component: Register },
-  { path: '/article/:id', component: Detail },
+  { path: '/detail', component: Detail },
   {
     path: '/',
     component: Layout,
@@ -38,7 +38,7 @@ router.beforeEach((to, from, next) => {
   console.log('from', from)
   if (getToken()) {
     next()
-  } else if (witePage.includes(to.path)) {
+  } else if (witePage.includes(to.path.toLowerCase())) {
     next()
   } else {
     next('/login')

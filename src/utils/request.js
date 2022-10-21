@@ -44,8 +44,8 @@ _axios.interceptors.response.use(
     if (error.response && error.response.data.message) {
       // error.response.data.message是后端 给我们的，我们要考虑可能后端不提供的场景
       Toast.fail(error.response.data.message)
-      removeToken() // token错误清除token
-      router.push('/login') // 没有token跳转
+      removeToken() // token错误清除token  模拟token失效
+      router.push('/login') // 没有token跳转 路由守卫里的token验证需要刷新才会跳转，所以这里我们手动跳
     }
     return Promise.reject(error)
   }

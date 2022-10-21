@@ -13,3 +13,9 @@ export const userLogin = (data) =>
     url: '/h5/user/login',
     data
   })
+// 用户信息
+export const userCurrentUser = () =>
+  request({
+    method: 'GET',
+    url: '/h5/user/currentUser'
+  })
