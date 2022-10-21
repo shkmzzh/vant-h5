@@ -1,6 +1,6 @@
 <template>
   <div class="article-page">
-    <nav class="my-nav van-hairline--bottom">
+    <nav class="my-nav van-hairline--bottom" >
       <a href="javascript:;" :class="{ active: query.sorter === 'weight_desc' }" @click="aClick('weight_desc')">推荐</a>
       <a href="javascript:;" :class="{ active: query.sorter === null}" @click="aClick(null)">最新</a>
       <div class="logo"><img src="http://www.dongh5.com/vue-vant-h5/img/logo.dbd40807.png" alt="" /></div>
