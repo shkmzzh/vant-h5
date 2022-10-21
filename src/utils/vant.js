@@ -3,8 +3,14 @@ import Vue from 'vue'
 // import 'vant/lib/index.css' //导入所有样式
 // import { Button } from 'vant' // 按需导入 Button 组件包含样式
 // Vue.use(Button) // 注册button
-import { Button, Icon, Tabbar, TabbarItem } from 'vant'
+import { Button, Icon, Tabbar, TabbarItem, NavBar, Field, Form, Toast, Cell, List } from 'vant'
 Vue.use(Tabbar)
 Vue.use(TabbarItem)
 Vue.use(Button)
 Vue.use(Icon)
+Vue.use(NavBar)
+Vue.use(Field)
+Vue.use(Form)
+Vue.use(Toast)
+Vue.use(Cell)
+Vue.use(List)

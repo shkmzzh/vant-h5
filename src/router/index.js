@@ -9,6 +9,7 @@ import Like from '@/views/like'
 import Article from '@/views/article'
 import Collect from '@/views/collect'
 import User from '@/views/myuser'
+import { getToken } from '@/utils/locale'
 Vue.use(VueRouter)
 
 const routes = [
@@ -19,6 +20,7 @@ const routes = [
     path: '/',
     component: Layout,
     children: [
+      { path: '/', redirect: '/article' },
       { path: '/article', component: Article },
       { path: '/like', component: Like },
       { path: '/collect', component: Collect },
@@ -30,5 +32,23 @@ const routes = [
 const router = new VueRouter({
   routes
 })
+const witePage = ['/login', '/register']
+router.beforeEach((to, from, next) => {
+  console.log('to', to)
+  console.log('from', from)
+  if (getToken()) {
+    next()
+  } else if (witePage.includes(to.path)) {
+    next()
+  } else {
+    next('/login')
+  }
+})
+// 获取原型对象上的push函数
+const originalPush = VueRouter.prototype.push
+// 修改原型对象中的push方法
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch((err) => err)
+}
 
 export default router
