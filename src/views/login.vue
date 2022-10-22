@@ -20,7 +20,7 @@
         placeholder="请输入密码"
         :rules="[
           { required: true, message: '请输入用户名', trigger: 'onChange' },
-          { pattern: /^\w{6,12}$/, message: '请输入6-12位密码', trigger: 'onChange' }
+          { pattern: /^\w{5,12}$/, message: '请输入6-12位密码', trigger: 'onChange' }
         ]"
       />
     </van-form>

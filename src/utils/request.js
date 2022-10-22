@@ -2,8 +2,8 @@
 // export 与 import的使用
 import axios from 'axios'
 import { Toast } from 'vant'
-import { getToken, removeToken } from '@/utils/locale'
-import router from '@/router/index'
+import { getToken } from '@/utils/locale'
+// import router from '@/router/index'
 
 // 个性定制化一个axios,产生一个定制后axios,不改变原axios，当然也可以定制多个
 // 调用 axios.create() 函数，创建一个 axios 的实例对象，用 request 来接收
@@ -44,8 +44,8 @@ _axios.interceptors.response.use(
     if (error.response && error.response.data.message) {
       // error.response.data.message是后端 给我们的，我们要考虑可能后端不提供的场景
       Toast.fail(error.response.data.message)
-      removeToken() // token错误清除token  模拟token失效
-      router.push('/login') // 没有token跳转 路由守卫里的token验证需要刷新才会跳转，所以这里我们手动跳
+      // removeToken() // token错误清除token  模拟token失效
+      // router.push('/login') // 没有token跳转 路由守卫里的token验证需要刷新才会跳转，所以这里我们手动跳
     }
     return Promise.reject(error)
   }

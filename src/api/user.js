@@ -10,7 +10,7 @@ export const userRegister = (data) =>
 export const userLogin = (data) =>
   request({
     method: 'POST',
-    url: '/h5/user/login',
+    url: '/auth/login',
     data
   })
 // 用户信息
