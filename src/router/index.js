@@ -63,8 +63,8 @@ const routes = [
         component: () => import('@/views/like.vue')
       },
       {
-        path: '/my',
-        component: () => import('@/views/my.vue')
+        path: '/user',
+        component: () => import('@/views/myuser.vue')
       }
     ]
   }
