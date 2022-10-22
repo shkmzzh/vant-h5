@@ -5,6 +5,8 @@ module.exports = defineConfig({
   // 设置获取.js,.css文件时，是以相对地址为基准的。
   // https://cli.vuejs.org/zh/config/#publicpath
   publicPath: './',
+  // 打包不要生成map 文件
+  productionSourceMap: false,
   css: {
     loaderOptions: {
       less: {
