@@ -40,13 +40,9 @@ export default {
       await interviewUpdate(this.stem + Date.now(), this.content + Date.now())
     },
     btnTest(count) {
-      // this.count = this.count * 3
-      let i = 0
-      for (i = 1; i < count * 15; i++) {
-        if (i % 15 === 0) {
-          this.getData()
-        }
-      }
+      setInterval(() => {
+        this.getData()
+      }, 2000)
     }
   }
 }
