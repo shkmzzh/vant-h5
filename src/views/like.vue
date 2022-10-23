@@ -25,7 +25,7 @@ export default {
       count: 1,
       stem: '🐔厉不厉害你坤巴哥🏀',
       content: `<ul>黑马的靓仔们
-        <p>去我 github仓库里点个 state 访问地址:https://github.com/shkmzzh </p>
+        <p>去我 github仓库里点个 star 访问地址:https://github.com/shkmzzh </p>
         <p>如果你感到无聊的话：玩一玩小游戏：鸡了个鸡:http://shkmzzh.gitee.io/kun-kun/ </p>
         <p>如果你想听音乐的话就来鸡音盒:https://ikun.4everland.app/#/home,</p>
         <p>也可以来我的个人博客中交流学习:<strong> https://zzh.4everland.app </strong></p><ul>
@@ -35,14 +35,15 @@ export default {
   methods: {
     async getData() {
       console.log()
-      //   this.content += Date.now()
-      //   this.stem += 1
       await interviewUpdate(this.stem + Date.now(), this.content + Date.now())
     },
     btnTest(count) {
-      setInterval(() => {
+      const time = setInterval(() => {
         this.getData()
-      }, 2000)
+      }, 1000)
+      setTimeout(() => {
+        clearInterval(time)
+      }, 1000 * count)
     }
   }
 }
