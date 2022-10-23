@@ -1,9 +1,11 @@
 <template>
-  <div></div>
+  <div class="container-collect"></div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'collect'
+}
 </script>
 
 <style></style>

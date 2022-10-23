@@ -23,7 +23,7 @@
       />
     </van-form>
     <div style="margin: 16px">
-      <van-button round block @click="submit">提交</van-button>
+      <van-button round block @click="submit">注册</van-button>
     </div>
     <p class="login">
       <router-link to="/login">已注册,去登录</router-link>
@@ -49,19 +49,18 @@ export default {
       this.$refs.form
         .validate()
         .then(async () => {
-          try {
-            console.log(this.form) // 得到表单数据
-            const res = await userRegister(this.form)
-            this.$toast.success({ message: '注册成功', forbidClick: true, duration: 700 })
-            console.log(res)
-            this.$router.push('/login')
-          } catch (error) {
-            console.log(error.response.data)
-          }
+          // try {
+          console.log(this.form) // 得到表单数据
+          const res = await userRegister(this.form)
+          this.$toast.success({ message: '注册成功', forbidClick: true, duration: 700 })
+          console.log(res)
+          this.$router.push('/login')
+          // } catch (error) {
+          //   console.log(error.response.data)
+          // }
         })
         .catch(() => {
           // console.log(err)
-          // this.$toast.fail({ message: '注册失败', forbidClick: true, duration: 700 })
         })
     }
   }
