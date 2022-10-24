@@ -9,7 +9,7 @@
     </van-form>
     <van-button block @click="submit">注册</van-button>
     <div>
-      <video src="@/assets/video/Bleach - Hitsugaya Toshiro Cybust PC.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
+      <img src="@/assets/Bleach_Trim6_Trim.gif">
     </div>
     <p class="register">
       <router-link to="/login">已有账号?去登录</router-link>

@@ -42,10 +42,6 @@ const routes = [
     component: () => import('@/views/register.vue')
   },
   {
-    path: '/video',
-    component: () => import('@/views/videos.vue')
-  },
-  {
     path: '/detail',
     component: () => import('@/views/detail.vue')
   },
