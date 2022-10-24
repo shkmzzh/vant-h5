@@ -8,7 +8,9 @@
       <van-field v-model="form.password" type="password" label="密码" placeholder="请输入密码" :rules="rules.username" />
     </van-form>
     <van-button block @click="submit">注册</van-button>
-
+    <div>
+      <video src="@/assets/video/Bleach - Hitsugaya Toshiro Cybust PC.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
+    </div>
     <p class="register">
       <router-link to="/login">已有账号?去登录</router-link>
     </p>
