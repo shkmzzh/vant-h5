@@ -42,6 +42,10 @@ const routes = [
     component: () => import('@/views/register.vue')
   },
   {
+    path: '/video',
+    component: () => import('@/views/videos.vue')
+  },
+  {
     path: '/detail',
     component: () => import('@/views/detail.vue')
   },
@@ -73,7 +77,7 @@ const routes = [
 const router = new VueRouter({
   routes
 })
-const witePage = ['/login', '/register']
+const witePage = ['/login', '/register', '/video']
 router.beforeEach((to, from, next) => {
   console.log('to', to)
   console.log('from', from)
